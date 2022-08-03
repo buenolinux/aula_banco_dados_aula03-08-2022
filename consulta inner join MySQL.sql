@@ -107,3 +107,26 @@ INNER JOIN tab_vendas
 ON tab_vendas.id_vendedor = tab_vendedores.id_vendedor
 GROUP BY   tab_vendas.id_vendedor, tab_vendedores.nome 
 
+
+/* -------------------------------------------- */
+
+
+/*
+Usando o Having
+Determina uma condição de busca para um grupo ou um conjunto 
+de registro, definindo critérios para limitar os resultados
+
+só pode ser usada em parceria com o group by
+
+mostra o total vendido por vendedor maior ou igual a 1000
+
+e seu nome (sem  o inner join)
+*/
+
+SELECT tab_vendas.id_vendedor AS 'Código',
+		tab_vendedores.nome AS Vendedor,
+        SUM(tab_vendas.valor) AS Total
+FROM tab_vendas, tab_vendedores
+WHERE tab_vendas.id_vendedor = tab_vendedores.id_vendedor
+GROUP BY tab_vendas.id_vendedor, tab_vendedores.nome
+HAVING SUM (tab_vendas.valor)>= 1000;
