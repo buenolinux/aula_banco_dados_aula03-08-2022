@@ -83,3 +83,14 @@ SELECT
 		 SUM(valor) AS 'Total de vendas '
 FROM  tab_vendas
 GROUP BY id_vendedor
+
+
+/* -------------------------------------------- */
+/*  Mostrar o total de vendido por vendedor e o seu nome (sem INNER JOIN)*/
+SELECT 		
+		tab_vendas.id_vendedor,
+		 tab_vendedores.nome AS 'Nome do vendedor',
+		 SUM(tab_vendas.valor) AS 'Total de vendas '
+FROM   tab_vendedores, tab_vendas
+where tab_vendedores.id_vendedor = tab_vendas.id_vendedor
+GROUP BY   tab_vendas.id_vendedor, tab_vendedores.nome 
