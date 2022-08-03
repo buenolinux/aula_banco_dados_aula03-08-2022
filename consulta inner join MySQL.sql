@@ -129,4 +129,4 @@ SELECT tab_vendas.id_vendedor AS 'Código',
 FROM tab_vendas, tab_vendedores
 WHERE tab_vendas.id_vendedor = tab_vendedores.id_vendedor
 GROUP BY tab_vendas.id_vendedor, tab_vendedores.nome
-HAVING SUM (tab_vendas.valor)>= 1000;
+HAVING SUM(tab_vendas.valor)>= 1000;
