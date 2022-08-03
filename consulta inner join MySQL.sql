@@ -1,4 +1,6 @@
-SELECT tab_alunos.nome, tab_professores.nome, tab_salas.numero FROM tab_turmas
+SELECT tab_alunos.nome AS 'Nome do aluno',
+	tab_professores.nome AS'Nome do professor',
+	tab_salas.numero AS 'Número da sala'FROM tab_turmas
 INNER JOIN tab_alunos
 ON tab_alunos.id_aluno = tab_turmas.id_aluno
 
