@@ -54,3 +54,11 @@ VALUES
 
 SELECT id_vendedor as 'Código do vendedor', COUNT(valor) AS 'Quantidade de vendas' FROM tab_vendas
 GROUP BY id_vendedor;
+
+/* ---------------------------------------- */
+
+/*  Mostrar a quantidade de vendas de cada vendedor e seu nome (sem INNER JOIN)*/
+SELECT tab_vendedores.nome AS 'Nome do vendedor', 
+		COUNT(tab_vendas.id_vendedor) AS 'Quantidade de vendas'
+from tab_vendedores, tab_vendas
+where tab_vendedores.id_vendedor = tab_vendas.id_vendedor GROUP BY(tab_vendas.id_vendedor) ;
