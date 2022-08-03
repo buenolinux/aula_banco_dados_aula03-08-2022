@@ -48,3 +48,9 @@ VALUES
 (3,'2022-08-02',550.00),
 (4,'2022-08-02',250.00);
 
+/* ---------------------------------------- */
+
+/*  Mostrar a quantidade de vendas de cada vendedor */
+
+SELECT id_vendedor as 'Código do vendedor', COUNT(valor) AS 'Quantidade de vendas' FROM tab_vendas
+GROUP BY id_vendedor;
